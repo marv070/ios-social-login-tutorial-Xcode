@@ -1,26 +1,25 @@
 HOW TO ADD SOCIAL LOGINS TO YOUR IOS APP
 
-1, Open the app that you created in Xcode that you want to added social log ins to. 
+1, Open the app that you created in Xcode that you want to added social logins to. 
 
-2, Add a new view controller where your social log in buttons will appear on main story board.
+2, Add a new view controller where your social login buttons will appear on main story board.
   - From search filter box(bottom right), type view controller and after selecting view controller, drag into  main story board to the left of your existing view.
   - Drag the starting point arrow over to your new view.
   - Create new SWIFT file from file new  and place just under main story board. 
   for eg. SocialLogInController.swift. (capitalize first letter in name then camel case.)
   - Now add your custom class  name  in the  identity inspector by typing  Capitalized  class name in class input box. 
-  - CLICK   INHERIT MODULE FROM TARGET BELOW THIS CLASS SELECTION. (Will to work if this is not checked.) 
-
+  - CLICK INHERIT MODULE FROM TARGET BELOW THIS CLASS SELECTION. (Will not work if this is not checked.) 
 
 3,  gem install cocoa pods from terminal
 
-4,  pod init  from terminal  
+4,  pod init from terminal  
 
 5,  Open pod file in text editor
      - Add  these pods where it says pods for nameOfMyApp:
         pod ‘Firebase/Core’
         pod ‘Firebase/Auth’
-       pod ‘GoogleSignIn’
-       pod ‘FBSDKLoginKit’
+        pod ‘GoogleSignIn’
+        pod ‘FBSDKLoginKit’
      - save file.
 
 6, type pod install from terminal.(this could take a few minutes.)
@@ -100,7 +99,7 @@ HOW TO ADD SOCIAL LOGINS TO YOUR IOS APP
     - click on your Main.storyboard
     - over in the element search bar(bottom far right search box) type view
     - scroll down and find view
-    - click and drag into your log in controller and release.
+    - click and drag into your login controller and release.
     -   set class on the right hand side in the identify inspector to GIDSignInButton.(you may be able to click drop down and find else just type in.)
     - Click the play button in the top left of page to run app. You should see a google button appear. It won’t work yet but it should be there.
 
@@ -161,7 +160,7 @@ class SocialLogInController: UIViewController, GIDSignInDelegate, GIDSignInUIDel
   - After pasting in the code you need to update your class name to match your specific class that you named earlier for eg. class LogInController: UIViewController, GIDSignInDelegate, GIDSignInUIDelegate {       (class is named just below the imports at top of page.)
 
 
-16, Run in simulator to make sure google log in works. It will not redirect anywhere yet without a segue but you should be able to log in. If not go back through all steps and be sure everything was completed up to this point.
+16, Run in simulator to make sure google login works. It will not redirect anywhere yet without a segue but you should be able to log in. If not go back through all steps and be sure everything was completed up to this point.
 
 17, Add  manual segway from your loginController to  Viewcontroller (This will allow going from the log in page to the next page after successful login.)
     -  click main story board 
@@ -189,13 +188,13 @@ class SocialLogInController: UIViewController, GIDSignInDelegate, GIDSignInUIDel
 The above line of code(self.performSegue(withIdentifier: "viewHelloWorldViewController", sender: self)) executes the segue which will allow going to your next view controller after successful log in with google.
   - Be sure to update above line so that the segue is named according to the name that you used to name hour segue.
 
-  - You should now have a working google log in that connects to your next view controller. Test this by clicking play button on top left of page. click google button to log in the you should be directed to your next view. 
+  - You should now have a working google login that connects to your next view controller. Test this by clicking play button on top left of page. click google button to login. You should be redirected to your next view. 
 
 
 18, CREATE NEW APP IN FACEBOOK 
   - go to developer.facebook.com and click create new project.
   - give project name
-  - click facebook log in then set up
+  - click facebook login then set up
   - click new iOS app.
   - downloaded sdk and add the  FBSDKCoreKIT and FBSDKLoginKit to frameworks folder in your Xcode project.
   - From Xcode click top tab on left side(should be name of your project) then click the general tab in the main area.
